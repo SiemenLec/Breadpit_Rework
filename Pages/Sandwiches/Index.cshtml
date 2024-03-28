@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model.Sandwich)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="@item.ImageUrl" class="card-img-top" alt="Sandwich Image">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text">Price: $@item.Price</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-page="./Details" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Details</a>
+                            <a asp-page="./Edit" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            <a asp-page-handler="Delete" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
