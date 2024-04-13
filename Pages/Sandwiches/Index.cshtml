@@ -1,7 +1,11 @@
 ﻿@page
 @model IndexModel
 
-<h1>Index</h1>
+@{
+    ViewData["Title"] = "Sandwiches";
+}
+
+<h1>Sandwiches</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-primary">Create New</a>
@@ -21,7 +25,7 @@
                         <div class="btn-group">
                             <a asp-page="./Details" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Details</a>
                             <a asp-page="./Edit" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Edit</a>
-                            <a asp-page-handler="Delete" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Delete</a>
+                            <a asp-page="./Delete" asp-route-id="@item.SandwichId" class="btn btn-sm btn-outline-secondary">Delete</a>
                         </div>
                     </div>
                 </div>

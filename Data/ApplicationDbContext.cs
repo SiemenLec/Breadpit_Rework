@@ -15,4 +15,6 @@ public class ApplicationDbContext : IdentityDbContext
     }
     public DbSet<Contact> Contact { get; set; }
     public DbSet<BreadpitProject.Models.Sandwich>? Sandwich { get; set; }
+    public DbSet<BreadpitProject.Models.Order>? Order { get; set; }
+    public DbSet<BreadpitProject.Models.OrderDetail>? OrderDetail { get; set; }
 }
